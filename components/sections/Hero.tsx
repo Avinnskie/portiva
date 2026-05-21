@@ -15,6 +15,8 @@ const META_ITEMS: string[] = [
   "PRT—HQ",
 ];
 
+const HERO_FRAME_HEIGHT = "max(760px, min(calc(100vw * 887 / 1280), 100svh))";
+
 export function Hero() {
   const heroRef = useRef<HTMLElement>(null);
   const headlineRef = useRef<HTMLHeadingElement>(null);
@@ -71,23 +73,23 @@ export function Hero() {
     <section
       ref={heroRef}
       className="relative bg-ink text-paper overflow-hidden"
-      style={{ minHeight: "min(887px, 100vh)" }}
+      style={{ minHeight: HERO_FRAME_HEIGHT }}
     >
       <div aria-hidden className="absolute inset-0">
         <Image
-          src="/cargo01.jpg"
+          src="/cargo-hero.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-50"
+          unoptimized
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/70 via-ink/55 to-ink/85" />
       </div>
 
-      <div className="relative flex flex-col" style={{ minHeight: "min(887px, 100vh)" }}>
+      <div className="relative flex flex-col" style={{ minHeight: HERO_FRAME_HEIGHT }}>
         <div className="flex-1 flex items-center pt-[var(--header-h)]">
-          <div className="w-full px-6 md:px-20 pb-20 md:pb-32">
+          <div className="w-full px-6 md:px-20 pb-20 md:pb-32 -translate-y-5 md:-translate-y-8">
             <h1
               ref={headlineRef}
               className="font-light text-[clamp(48px,7.5vw,88px)] leading-[1.05] tracking-[-0.02em] text-paper max-w-[1120px]"
