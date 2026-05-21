@@ -127,7 +127,7 @@ export function Capabilities() {
         </div>
 
         <div className="space-y-5">
-          {CAPABILITIES.map((cap, i) => (
+          {CAPABILITIES.map((cap) => (
             <article
               key={cap.number}
               className={`capability-card group relative bg-paper rounded p-8 transition-colors duration-300 border border-rule hover:border-ink`}
